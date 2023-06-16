@@ -1,0 +1,11 @@
+*{
+     margin: 0;
+     padding:0;
+     box-sizing: border-box;
+}  
+
+#title{
+     padding-inline: 65px;
+     padding-block:20px;
+     color: rgba(255,255,255,.8);
+}

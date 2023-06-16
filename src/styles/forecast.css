@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  
+#forecast{
+  padding-inline: 50px;
+  padding-top: 20px;
+}
+
+#forecast div:first-child {
+  padding-bottom: 10px;
+}
+
+#timeline{
+  width:100%;
+  /* background-color: rgba(255,255,255,0.4); */
+  height:150px;
+  padding:10px;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+
+.timestamps{
+  height:100%;
+  margin-right:10px;
+  width:170px;
+  padding:20px;
+  display: inline-block; 
+  line-height: 20px;
+  text-align: center;
+  
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+}
+
+#timeline::-webkit-scrollbar{
+  display: none;
+}

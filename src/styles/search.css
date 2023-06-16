@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  
+#search{
+    height:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search input{
+  outline: none;
+  border:none;
+  width:400px;
+  height:38px;
+  padding-left: 30px;
+  padding-block: 10px;
+  font-size: 1rem;
+  background-color: #eee;
+  text-transform:capitalize;
+}

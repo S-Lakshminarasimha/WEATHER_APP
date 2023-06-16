@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#temp{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    padding-inline:60px;
+    padding-block:20px;
+}
+
+
+#city p:first-child{
+    padding-top:20px;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+#climate p:first-child{
+    font-size: 5rem;
+    font-weight: bold;
+    margin-left: 35px;
+}
+
+#climate p:nth-child(2){
+    font-size: 1.2rem;
+}
+#details{
+    height:220px;
+    width:400px;
+    background-color: rgba(255,255,255,0.4);
+}
+
+#city{
+    height:220px;
+    width:400px;
+    line-height: 70px;
+    padding-top:30px;
+
+}
+
+
+
+#climate{
+    padding-top:20px;
+    height:220px;
+    width:300px;
+    line-height: 80px;
+}
+
+#climate,#city{
+    text-align: center;
+    background-color: rgba(255,255,255,0.4);
+}
+
+#details{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: 100px;
+    /* gap: 20px; */
+    padding:10px;
+}
+
+#details .factor{
+    width:100%;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 30px;
+
+}
+
+#details .factor div:first-child{
+    font-weight: bold;
+}
+
+#city,#climate,#details{
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);  
+}
