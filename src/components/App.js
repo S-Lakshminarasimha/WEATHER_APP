@@ -16,11 +16,11 @@ function App() {
 
   const getData = useCallback(async ()=>{
     try{
-      const resWeather = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+      const resWeather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
       setweather(resWeather.data)
       setValidCity(true)
 
-      const resForecast = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`)
+      const resForecast = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`)
       setForecast(resForecast.data)
     }
     catch(err){
