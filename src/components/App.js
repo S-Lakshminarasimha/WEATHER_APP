@@ -7,14 +7,33 @@ import axios from 'axios'
 import '../styles/App.css'
 
 function App() {
-
-  const apiKey = '0e31343bb4a703431946509b986c0b6c'  
-  const [city,setCity] = useState('Guntur')
+  const apiKey = '0e31343bb4a703431946509b986c0b6c'   // openweather
+  const [city,setCity] = useState('')
   const [weather,setweather]=useState({})
   const [forecast,setForecast] = useState({})
   const [validCity, setValidCity] = useState(true);
 
-  const getData = useCallback(async ()=>{
+  const getMycity= ()=>{
+    try{
+      navigator.geolocation.getCurrentPosition(async(pos)=>{
+        const {latitude,longitude}= pos.coords
+        const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`
+        const res = await axios.get(url)
+        const location = res.data.display_name.split(' ')[0]
+        setCity(location)
+      })
+    }
+    catch(err){
+      // console.log(err)
+    }
+  }
+
+  useEffect(()=>{
+    getMycity()
+  },[])
+
+
+  const getData =  useCallback(async ()=>{
     try{
       const resWeather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
       setweather(resWeather.data)
@@ -24,14 +43,13 @@ function App() {
       setForecast(resForecast.data)
     }
     catch(err){
-      console.log(err)
       setValidCity(false)
     }
   },[city])
 
   useEffect(()=>{
     getData()
-  },[getData])
+ },[getData])
 
 
   const searchInput=(inp)=>{    // Helpful to get data from the child
@@ -73,13 +91,28 @@ function App() {
         </>
       ) : (
         <div id='invalid'>
-          <p> Please enter a valid city name</p>
+          <p> Please enter a valid city name or try searching for other cities.</p>
         </div>
       )}
     </div>
   )
  }
-  
+ else{
+  return(
+    <div id='wrapper' className={details?.temperature>=31 && details?.climateStatus==='Clear'? 'sunny' 
+                                :details?.temperature<=32 && details?.climateStatus==='Clouds' ? 'cloudy'
+                                :details?.temperature<=30 && details?.climateStatus==='Rain'? 'rainy'
+                                :''}> 
+      <Title />
+      <Search searchdata={searchInput}/>
+    
+      <div classNames='invalid'>
+        <p id='NotFound'> Note: I worked with a free API for my project that serves several major cities. If the data for your city isn't available, try searching for other cities.</p>
+      </div>
+
+    </div>
+  )
+ }
 }
 
 export default App
