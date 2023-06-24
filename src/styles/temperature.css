@@ -15,7 +15,7 @@
 
 #city p:first-child{
     padding-top:20px;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: bold;
 }
 
@@ -39,6 +39,7 @@
     width:400px;
     line-height: 70px;
     padding-top:30px;
+
 
 }
 

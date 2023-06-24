@@ -4,10 +4,16 @@
   box-sizing: border-box;
 }
 
-#wrapper{
+#FoundWrapper{
   width:100%;
   height:100vh;
-  background-color: #00C0F0;
+}
+
+#NotFoundWrapper{
+  width:100%;
+  height:100vh;
+  background: linear-gradient(to right, #16222a, #3a6073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .cloudy{
@@ -20,6 +26,20 @@ background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
 
 .rainy{
   background: linear-gradient(to right, #44a08d, #093637);
+}
+
+.clear{
+  background: linear-gradient(to right, #2980b9, #6dd5fa);
+}
+.mist{
+  background: linear-gradient(to right, #757f9a, #d7dde8);
+}
+
+.haze{
+  background: linear-gradient(to right, #8e9eab, #eef2f3);
+}
+.snow{
+  background: linear-gradient(to right, #ece9e6, #ffffff);
 }
 
 #invalid{
@@ -44,7 +64,18 @@ background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
   font-size: 1.5rem;
   padding-top:50px;
   font-weight: 400;
+  color: white;
   opacity: 0.9;
   padding-inline:400px;
   text-align: justify;
+}
+
+
+#NotFoundImg{
+  width:150px;
+  height:150px;
+  position: absolute;
+  bottom: 150px;
+  left:50%;
+  transform: translateX(-50%);
 }
